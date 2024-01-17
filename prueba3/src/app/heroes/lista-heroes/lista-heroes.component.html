@@ -1,0 +1,45 @@
+<h2>Listado de héroes</h2>
+
+<!--
+<ul class="mt-2 list-group">
+  <li class="list-group-item">Spiderman</li>
+  <li class="list-group-item">Spiderman</li>
+  <li class="list-group-item">Spiderman</li>
+  <li class="list-group-item">Spiderman</li>
+</ul> -->
+
+<!-- Primero enseño el ngFor -->
+<ul class="mt-2 list-group">
+  <li *ngFor="let item of nombresHeroes"
+  class="list-group-item">{{item}}</li>
+
+</ul>
+
+<!-- Creo el boton para borrar el ultimo elemento y los textos -->
+
+<!-- <button (click)="eliminarUltimoHeroe()" class="btn btn-outline-danger
+"
+>Borrar ultimo heroe</button> -->
+
+<button *ngIf="nombresHeroes.length > 0" (click)="eliminarUltimoHeroe()" class="btn btn-outline-danger
+"
+>Borrar ultimo heroe</button>
+
+
+<!-- <h3>Heroe borrado <small class="text-danger"> {{heroeBorrado}}</small></h3>
+<h3>No ha borrado nada.</h3> -->
+
+<!-- <div *ngIf="heroeBorrado">
+  <h3>Heroe borrado <small class="text-danger"> {{heroeBorrado}}</small>
+  </h3>
+</div>
+<h3 *ngIf="!heroeBorrado">No ha borrado nada.</h3> -->
+
+<div *ngIf="heroeBorrado; else nadaBorrado">
+  <h3>Heroe borrado <small class="text-danger"> {{heroeBorrado}}</small>
+  </h3>
+</div>
+<ng-template #nadaBorrado>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
+

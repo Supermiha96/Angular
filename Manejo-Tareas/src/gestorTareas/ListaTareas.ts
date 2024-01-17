@@ -4,9 +4,9 @@ import Tarea from './Tarea';
 class ListaTareas {
   private tareas: Tarea[];
 
-  constructor(tareas: Tarea[] = []) {
-    this.tareas = tareas;
-}
+  constructor() {
+    this.tareas = [];
+  }
 
   agregarTarea(descripcion: string, prioridad: string): void {
     const nuevaTarea = new Tarea(this.tareas.length + 1, descripcion, prioridad);
@@ -31,6 +31,7 @@ class ListaTareas {
     return this.tareas.map(t => t.obtenerInformacion());
   }
 }
+
 
 export default ListaTareas;
 
